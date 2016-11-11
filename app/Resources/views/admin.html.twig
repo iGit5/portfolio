@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="{{ asset_url }}" />
 {% endstylesheets %}
 
+{% block stylesheet %}
+{% endblock %}
 
 
 
@@ -382,7 +384,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+            <li><a href="{{ path('admin_show_articles') }}"><i class="fa fa-circle-o"></i> Data tables</a></li>
           </ul>
         </li>
         <li>
@@ -703,6 +705,10 @@
  </script>-->
     <script src="{{ asset_url }}"></script>
 {% endjavascripts %}
+
+{%  block javascripts %}
+
+{%  endblock %}
 
 
 </body>

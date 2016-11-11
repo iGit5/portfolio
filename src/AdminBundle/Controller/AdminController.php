@@ -43,5 +43,14 @@ class AdminController extends Controller
                 'form' => $form->createView()));
     }
 
+    public function showActiclesAction()
+    {
+
+      
+        return $this->render('AdminBundle:Admin:show_articles.html.twig', array(
+              ));
+
+    }
+
 
 }

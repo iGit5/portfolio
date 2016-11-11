@@ -18,12 +18,13 @@ class ArticleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class)
-            ->add('content', CKEditorType::class)
+            ->add('name', TextType::class, array('attr' => array('label' => 'Name', 'class' => 'form-control')))
+            ->add('content', CKEditorType::class, array('attr' => array('label' => 'Content', 'class' => 'form-control')))
             ->add('online', CheckboxType::class, array(
                  'label'    => 'Online',
                  'required' => true,
-      ))
+                 'attr' => array('class' => 'checkbox')
+             ))
         ;
     }
 

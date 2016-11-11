@@ -13,7 +13,11 @@ class PortfolioController extends Controller
 
     public function articlesAction()
     {
-      return $this->render('PortfolioBundle:Portfolio:articles.html.twig');
+      $articleRepository = $this->getDoctrine()->getRepository('PortfolioBundle:Article');
+
+      $articles = $articleRepository->findAll();
+
+      return $this->render('PortfolioBundle:Portfolio:articles.html.twig', array('articles' => $articles));
 
     }
 

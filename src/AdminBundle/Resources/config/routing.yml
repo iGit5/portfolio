@@ -5,3 +5,7 @@ admin_homepage:
 admin_create_article:
     path:     /create_article
     defaults: { _controller: AdminBundle:Admin:createActicle }
+
+admin_show_articles:
+    path:     /show_articles
+    defaults: { _controller: AdminBundle:Admin:showActicles }
