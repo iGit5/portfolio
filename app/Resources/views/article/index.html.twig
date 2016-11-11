@@ -39,33 +39,17 @@
               <thead>
               <tr>
                 <th>Titre de l'article</th>
-                <th>Date de création</th>
+                <th>Update</th>
               </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 4.0
-                </td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 5.0
-                </td>
-              </tr>
-
-              <tr>
-                <td>Misc</td>
-                <td>PSP browser</td>
-              </tr>
-              <tr>
-                <td>Other browsers</td>
-                <td>All others</td>
-              </tr>
+              {% for article in articles %}
+                  <tr>
+                    <td>{{ article.name }}</td>
+                    <td><a href="{{ path('article_edit', {'id': article.id}) }}"><button type="button" class="btn btn-primary">Update</button></a></td>
+                  </tr>
+              {% endfor %}
               </tbody>
-
             </table>
           </div>
           <!-- /.box-body -->

@@ -1,3 +1,7 @@
+portfolio_article:
+    resource: "@PortfolioBundle/Resources/config/routing/article.yml"
+    prefix:   /article
+
 portfolio_homepage:
     path:     /
     defaults: { _controller: PortfolioBundle:Portfolio:index }
@@ -12,11 +16,13 @@ portfolio_tutoriel:
 portfolio_articles:
     path:     /articles
     defaults: { _controller: PortfolioBundle:Portfolio:articles }
-portfolio_article:
+
+portfolio_article_show:
     path:     /article/{id}
-    defaults: { _controller: PortfolioBundle:Portfolio:article }
+    defaults: { _controller: PortfolioBundle:Portfolio:articleshow }
     requirements:
         id: '\d+'
+
 portfolio_cv:
     path:     /cv
     defaults: { _controller: PortfolioBundle:Portfolio:cv }

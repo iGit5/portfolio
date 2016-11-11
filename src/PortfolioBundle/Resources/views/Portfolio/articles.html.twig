@@ -24,10 +24,10 @@
 																<h3>{{ article.name }}</h3>
 																<p>Posted 45 minutes ago</p>
 															</header>
-															<p>{{ article.content }}</p>
+															<p>{{ article.content | raw }}</p>
 															<footer>
 																<ul class="actions">
-																	<li><a href="{{ path('portfolio_article', {'id': 1}) }}" class="button icon fa-file-text">Voir plus</a></li>
+																	<li><a href="{{ path('portfolio_article_show', {'id': article.id}) }}" class="button icon fa-file-text">Voir plus</a></li>
 																	<li><a href="#" class="button alt icon fa-comment">33 comments</a></li>
 																</ul>
 															</footer>

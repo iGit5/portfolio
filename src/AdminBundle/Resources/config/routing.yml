@@ -9,3 +9,13 @@ admin_create_article:
 admin_show_articles:
     path:     /show_articles
     defaults: { _controller: AdminBundle:Admin:showActicles }
+admin_update_article:
+    path:     /update_article/{id}
+    defaults: { _controller: PortfolioBundle:Portfolio:updateArticle }
+    requirements:
+        id: '\d+'
+admin_delete_article:
+    path:     /delete_article/{id}
+    defaults: { _controller: PortfolioBundle:Portfolio:deleteArticle }
+    requirements:
+        id: '\d+'

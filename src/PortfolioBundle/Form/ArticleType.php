@@ -15,8 +15,12 @@ use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 
 class ArticleType extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        // $builder->add('name')->add('content')->add('online')        ;
         $builder
             ->add('name', TextType::class, array('attr' => array('label' => 'Name', 'class' => 'form-control')))
             ->add('content', CKEditorType::class, array('attr' => array('label' => 'Content', 'class' => 'form-control')))
@@ -28,10 +32,23 @@ class ArticleType extends AbstractType
         ;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'PortfolioBundle\Entity\Article'
         ));
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getBlockPrefix()
+    {
+        return 'portfoliobundle_article';
+    }
+
+
 }

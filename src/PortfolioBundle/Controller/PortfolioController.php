@@ -21,10 +21,19 @@ class PortfolioController extends Controller
 
     }
 
-    public function articleAction()
+    public function articleshowAction($id)
     {
-      return $this->render('PortfolioBundle:Portfolio:article.html.twig');
+        $article = $this->getDoctrine()
+              ->getRepository('PortfolioBundle:Article')
+              ->find($id);
 
+          if (!$article) {
+              throw $this->createNotFoundException(
+                  'No article found for id '.$id
+              );
+          }
+
+        return $this->render('PortfolioBundle:Portfolio:article.html.twig', array('article' => $article));
     }
 
     public function tutorielsAction()
@@ -42,7 +51,6 @@ class PortfolioController extends Controller
     public function cvAction()
     {
       return $this->render('PortfolioBundle:Portfolio:cv.html.twig');
-
     }
 
 }
