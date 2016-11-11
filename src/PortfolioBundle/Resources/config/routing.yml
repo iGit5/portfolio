@@ -5,14 +5,18 @@ portfolio_tutoriels:
     path:     /tutoriels
     defaults: { _controller: PortfolioBundle:Portfolio:tutoriels }
 portfolio_tutoriel:
-    path:     /tutoriel
+    path:     /tutoriel{id}
     defaults: { _controller: PortfolioBundle:Portfolio:tutoriel }
+    requirements:
+        id: '\d+'
 portfolio_articles:
     path:     /articles
     defaults: { _controller: PortfolioBundle:Portfolio:articles }
 portfolio_article:
-    path:     /article
+    path:     /article/{id}
     defaults: { _controller: PortfolioBundle:Portfolio:article }
+    requirements:
+        id: '\d+'
 portfolio_cv:
     path:     /cv
     defaults: { _controller: PortfolioBundle:Portfolio:cv }
